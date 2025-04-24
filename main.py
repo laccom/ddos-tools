@@ -2,14 +2,12 @@ import subprocess
 import sys
 
 def install_requirements():
-    # Vérifie si le fichier requirements.txt existe dans le répertoire courant
     try:
         subprocess.check_call([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"])
     except subprocess.CalledProcessError as e:
         print("Erreur lors de l'installation des dépendances:", e)
         sys.exit(1)
 
-# Installe les dépendances au lancement du script
 install_requirements()
 
 import sys
@@ -17,7 +15,6 @@ import time
 import os
 from colorama import Fore, init
 
-# Importation des modules depuis le dossier bin
 sys.path.append(os.path.join(os.path.dirname(__file__), 'bin'))
 
 from ascii import print_ascii_text, print_ascii_text2
